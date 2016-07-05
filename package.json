@@ -1,0 +1,19 @@
+{
+  "name": "whats-the-deal",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stvnrlly",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "concept-net": "^0.3.0",
+    "dotenv": "^2.0.0",
+    "natural": "^0.4.0",
+    "twit": "^2.2.4",
+    "wordnik": "0.0.2"
+  }
+}
