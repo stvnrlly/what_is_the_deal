@@ -12,6 +12,12 @@ var conceptNet = new ConceptNet();
 // Initialize noun inflector to change singular ↔ plural
 var nounInflector = new natural.NounInflector();
 
+// var Tagger = require('natural').BrillPOSTagger;
+// var baseFolder = './node_modules/natural/lib/natural/brill_pos_tagger/data/English';
+// var rulesFile = baseFolder + '/tr_from_posjs.txt';
+// var lexiconFile = baseFolder + '/lexicon_from_posjs.json';
+// var defaultCategory = 'N';
+
 // Set up Wordnik API
 var wn = new Wordnik({
   api_key: process.env.WORDNIK_API_KEY
@@ -48,14 +54,14 @@ function getConcepts(thing) {
     } else {
       if (result.edges.length > 1) {
         var deal = deals[Math.floor(Math.random() * (deals.length))];
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 100; i++) {
           var first = result.edges[Math.floor(Math.random() * (result.edges.length))].surfaceStart;
           var second = result.edges[Math.floor(Math.random() * (result.edges.length))].surfaceStart;
           if (first && second && (first !== second)) {
-            if ((first.split(' ').length === 1) && (first.slice(-1) !== 's')) {
+            if ((first.slice(-1) !== 's')) {
               first = nounInflector.pluralize(first);
             }
-            if ((second.split(' ').length === 1) && (second.slice(-1) !== 's')) {
+            if ((second.slice(-1) !== 's')) {
               second = nounInflector.pluralize(second);
             }
             var query = deal+' the deal with '+nounInflector.pluralize(thing)+
@@ -69,7 +75,7 @@ function getConcepts(thing) {
   });
 }
 
-function getWord(callback) {
+function getWord() {
   wn.randomWord({
     minCorpusCount: 10000,
     includePartOfSpeech: ['noun'],
