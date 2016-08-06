@@ -1,4 +1,4 @@
-# whats-the-deal
+# what-is-the-deal
 
 Using random words from the [Wordnik](https://www.wordnik.com/) API and related
 concepts from [Concept Net](http://conceptnet5.media.mit.edu/) to ask the
@@ -27,4 +27,5 @@ npm start
 
 ## License
 
-This work is dedicated to the public domain. Copyright is waived under a [CC0-1.0 license](LICENSE.md).
+This work is dedicated to the public domain. Copyright is waived under a
+[CC0-1.0 license](LICENSE.md).
